@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- start icon -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- end icon -->
+
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="detailpro.css">
+</head>
+<body>
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="img/STORE/WOMEN/WomenClothing/TSHIRT/WCT1a.PNG" width="100%" id="MainImg" alt="">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="img/STORE/WOMEN/WomenClothing/TSHIRT/WCT1b.PNG" width="100%" id="MainImg" alt="">
+            </div>
+            <!-- <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="img/STORE/WOMEN/WomenClothing/TSHIRT/WCT2a.PNG" width="100%" id="MainImg" alt="">
+            </div> -->
+
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <!-- <span class="dot"></span>  -->
+            </div>
+
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img class="demo cursor" src="img/STORE/WOMEN/WomenClothing/TSHIRT/WCT1a.PNG" onclick="currentSlide(1)" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img class="demo cursor" src="img/STORE/WOMEN/WomenClothing/TSHIRT/WCT1b.PNG" onclick="currentSlide(2)" width="100%" class="small-img" alt="">
+                </div>
+                <!-- <div class="small-img-col">
+                    <img class="demo cursor" src="img/STORE/WOMEN/WomenClothing/TSHIRT/WCT2a.PNG" onclick="currentSlide(3)" width="100%" class="small-img" alt="">
+                </div> -->
+                
+            </div>
+        </div>
+
+        <div class="single-pro-details">
+            <h6>Home / T-Shirt</h6>
+            <h4>Women's Fashion T Shirt</h4>
+            <h2>3500円</h2>
+            <select>
+              <option>Select Size</option>
+              <option>XL</option>
+              <option>XXL</option>
+              <option>Small</option>
+              <option>Large</option>
+          </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span>Long sleeve sweatshirt with adjustable drawstring hood. Rib trim.</span>
+        </div>
+    </section>
+    
+    <section class="pro-info">
+        
+    </section>
+    <script>
+        // ----auto stat-----
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        // ---select----
+        let imgIndex = 1;
+        showImg(imgIndex);
+
+        function plusSlides(n) {
+    showImg(imgIndex += n);
+}
+
+        function currentSlide(n) {
+            showImg(imgIndex = n);
+        }
+
+        function showImg(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            
+            if (n > slides.length) {imgIndex = 1}
+            if (n < 1) {imgIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[imgIndex-1].style.display = "block";
+            dots[imgIndex-1].className += " active";
+            // captionText.innerHTML = dots[imgIndex-1].alt;
+        }
+    </script>
+</body>
+</html>

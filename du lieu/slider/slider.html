@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="styleslider.css">
+  </head>
+  <body>
+
+    <!--image slider start-->
+    <div class="slider">
+      <div class="slides">
+        <!--radio buttons start-->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        
+        <!--radio buttons end-->
+        <!--slide images start-->
+        <!-- Slider start -->
+        <div class="slide first">
+            <img src="img/slide113.jpg" alt="">
+            <div id="hero">
+                <h4>New Arrival</h4>
+                <h2>Spring Collection</h2>
+                <h1>Collection 2023</h1>
+                <p>Life style that you need</p>
+                <a href="shop/shop.html" class="main-btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/slide112.jpg" alt="">
+            <div id="hero">
+                <h4>Super value deals</h4>
+                <h2>Women Fashion</h2>
+                <h1>On all products</h1>
+                <p>Save more with coupons & up to 70% off!</p>
+                <a href="shop/Women.html" class="main-btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/slide111.jpg" alt="">
+            <div id="hero">
+                <h4>Super value deals</h4>
+                <h2>Man fashion</h2>
+                <h1>On all products</h1>
+                <p>Save more with coupons & up to 70% off!</p>
+                <a href="shop/Men.html" class="main-btn">Shop Now</a>
+            </div>
+        </div>
+        
+	<!-- Slider end -->
+        <!--slide images end-->
+        <!--automatic navigation start-->
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          
+        </div>
+        <!--automatic navigation end-->
+      </div>
+      <!--manual navigation start-->
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        
+      </div>
+      <!--manual navigation end-->
+    </div>
+    <!--image slider end-->
+
+    <script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+      document.getElementById('radio' + counter).checked = true;
+      counter++;
+      if(counter > 3){
+        counter = 1;
+      }
+    }, 5000);
+    </script>
+
+  </body>
+</html>
